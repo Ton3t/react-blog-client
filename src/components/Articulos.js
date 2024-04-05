@@ -6,7 +6,7 @@ import PostEditor from "./PostEditor";
 function Articulos() {
   const [posts, setPosts] = useState([]);
   const [postEditorOpen, setPostEditorOpen] = useState(false);
-  const [editPostData, setEditPostData] = useState(null);
+  const [setEditPostData] = useState(null);
  
 
   useEffect(() => {
