@@ -5,7 +5,8 @@ import PostEditor from "./PostEditor";
 
 function Articulos() {
   const [posts, setPosts] = useState([]);
-  const [newPostEditorOpen, setNewPostEditorOpen] = useState(false);
+  const [postEditorOpen, setPostEditorOpen] = useState(false);
+  const [editPostData, setEditPostData] = useState(null);
  
 
   useEffect(() => {
@@ -17,6 +18,11 @@ function Articulos() {
     setPosts(postsRes.data);
   }
 
+  function editPost(postData) {
+    setEditPostData(postData);
+    setPostEditorOpen(true);
+  }
+
   function renderPosts() {
 
     let sortedPosts = [...posts];
@@ -26,7 +32,7 @@ function Articulos() {
 
 
     return sortedPosts.map((post, i) => {
-      return <Post key={i} post={post} />;
+      return <Post key={i} post={post} getPosts={getPosts} editPost={editPost} />;
     });
   }
 
@@ -34,11 +40,11 @@ function Articulos() {
 
   return (
     <div className="articulos">
-      {!newPostEditorOpen && (
-        <button onClick={() => setNewPostEditorOpen(true)}>Añadir Post</button>
+      {!postEditorOpen && (
+        <button onClick={() => setPostEditorOpen(true)}>Añadir Post</button>
       )}
-      {newPostEditorOpen && (
-        <PostEditor setNewPostEditorOpen={setNewPostEditorOpen} getPosts={getPosts} />
+      {postEditorOpen && (
+        <PostEditor setPostEditorOpen={setPostEditorOpen} getPosts={getPosts} />
       )}
       {renderPosts()}
     </div>

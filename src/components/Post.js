@@ -1,10 +1,10 @@
 import React from "react";
 import Axios from "axios";
 
-function Post({ post, getPosts }) {
-
+function Post({ post, getPosts, editPost }) {
   async function deletePost() {
-    await Axios.delete(`http://localhost:5000/posts/${post._id}`)
+    await Axios.delete(`http://localhost:5000/posts/${post._id}`);
+    getPosts();
   }
 
   return (
@@ -18,10 +18,16 @@ function Post({ post, getPosts }) {
       )}
       {post.images &&
         post.images.map((image, index) => (
-            <img key={index} src={`data:image/*;base64,${image}`} alt={`alt de la imagen`} />
-          ))}
+          <img
+            key={index}
+            src={`data:image/*;base64,${image}`}
+            alt={`alt de la imagen`}
+          />
+        ))
+        }
 
-          <button onClick={deletePost}>Borrar</button>
+        <button onClick={() => editPost(post)}>Editar</button> 
+      <button onClick={deletePost}>Borrar</button>
     </div>
   );
 }

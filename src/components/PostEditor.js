@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
-function PostEditor(props) {
+function PostEditor({ getPosts, setPostEditorOpen, editPostData }) {
   const [editorTitulo, setEditorTitulo] = useState("");
   const [editorDescripcion, setEditorDescripcion] = useState("");
   const [editorCode, setEditorCode] = useState("");
   const [editorImages, setEditorImages] = useState([]);
+
+  useEffect(() => {
+    if(editPostData) {
+        setEditorTitulo(editPostData.titulo ? editPostData.titulo :  "");
+        setEditorDescripcion(editPostData.descripcion ? editPostData.descripcion : "");
+        setEditorCode(editPostData.code ? editPostData.code : "");
+        setEditorImages(editPostData.images ? editPostData.images : []);
+    }
+  }, [editPostData]);
 
   async function savedPost(e) {
     e.preventDefault();
@@ -25,8 +34,15 @@ function PostEditor(props) {
       images: base64Images ? base64Images : undefined,
     };
 
-    await Axios.post("http://localhost:5000/posts/", postData);
-    props.getPosts();
+    if(!editPostData) {
+        await Axios.post("http://localhost:5000/posts/", postData);
+
+    }
+    else {
+        await Axios.put(`http://localhost:5000/posts/${editPostData._id}`, postData);
+    }
+
+    getPosts();
     closeEditor();
   }
 
@@ -44,7 +60,7 @@ function PostEditor(props) {
     setEditorTitulo("");
     setEditorDescripcion("");
     setEditorCode("");
-    props.setNewPostEditorOpen(false);
+    setPostEditorOpen(false);
   }
 
   return (
