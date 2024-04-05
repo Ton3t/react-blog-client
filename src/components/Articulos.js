@@ -2,6 +2,7 @@ import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import Post from "./Post";
 import PostEditor from "./PostEditor";
+import "./Articulos.scss";
 
 function Articulos() {
   const [posts, setPosts] = useState([]);
@@ -41,7 +42,7 @@ function Articulos() {
   return (
     <div className="articulos">
       {!postEditorOpen && (
-        <button onClick={() => setPostEditorOpen(true)}>Añadir Post</button>
+        <button className="btn-editor-toggle" onClick={() => setPostEditorOpen(true)}>Añadir Post</button>
       )}
       {postEditorOpen && (
         <PostEditor setPostEditorOpen={setPostEditorOpen} getPosts={getPosts} />

@@ -1,0 +1,41 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.post {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    background: var(--secondary-color);
+    box-shadow: var(--box-shadow);
+
+    .titulo .descripcion .code .img {
+        margin-bottom: 1rem;
+    }
+
+    .code {
+        padding: 0.5rem;
+        border-radius: 5px;
+        font-size: 1.3rem;
+    }
+
+    .img {
+        padding: 0.5rem;
+        width: 550px;
+        border-radius: 15px;
+    }
+
+    .btn-edit, .btn-delete {
+        @include btn();
+        margin: 1rem;
+    }
+
+    .btn-edit {
+        background: var(--primary-color);
+        color: var(--text-color);
+    }
+
+    .btn-delete {
+        background: var(--danger-color);
+        color: var(--text-color);
+    }
+}

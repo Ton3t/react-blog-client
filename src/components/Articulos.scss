@@ -1,0 +1,9 @@
+@import "../styles/mixins.scss";
+@import "../styles/variables.scss";
+
+.articulos {
+    .btn-editor-toggle {
+        @include btn();
+        background: var(--accent-color);
+    }
+}

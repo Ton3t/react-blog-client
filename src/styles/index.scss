@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Tillana:wght@400;500;600;700;800&display=swap");
+@import "./variables.scss";
+@import "./mixins.scss";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-primary-color);
+  font-family: "Tillana", system-ui;
+  font-weight: 400px;
+  font-style: normal;
+}
+
+.container {
+  margin: 0px auto;
+  padding: 1rem;
+  max-width: 1000px;
+}
+
+button {
+    border: unset;
+    background: unset;
+    font: unset;
+    color: unset;
+    cursor: pointer;
+}
+
+a {
+    color: unset;
+    text-decoration: unset;
+    @include lnk();
+}
