@@ -2,8 +2,7 @@ import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Post from './Post';
 
-function Home() {
-
+function Articulos() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -23,10 +22,10 @@ function Home() {
     }
 
   return (
-    <div className='home'>
+    <div className='articulos'>
         {renderPosts()}
     </div>
   );
 }
 
-export default Home;
+export default Articulos;
