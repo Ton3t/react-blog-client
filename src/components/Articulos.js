@@ -20,7 +20,14 @@ function Articulos() {
   }
 
   function renderPosts() {
-    return posts.map((post, i) => {
+
+    let sortedPosts = [...posts];
+    sortedPosts = sortedPosts.sort((a, b) => {
+        return new Date(b.createdAt) - new Date(a.createdAt);
+    })
+
+
+    return sortedPosts.map((post, i) => {
       return <Post key={i} post={post} />;
     });
   }
