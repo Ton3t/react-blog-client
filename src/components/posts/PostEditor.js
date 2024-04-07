@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import "./PostEditor.scss"
 
 function PostEditor({ getPosts, setPostEditorOpen, editPostData }) {
   const [editorTitulo, setEditorTitulo] = useState("");
@@ -96,8 +97,8 @@ function PostEditor({ getPosts, setPostEditorOpen, editPostData }) {
           accept="image/"
           onChange={(e) => setEditorImages(e.target.files)}
         />
-        <button type="submit">Añadir Post</button>
-        <button onClick={closeEditor}>Cancelar</button>
+        <button className="btn-save" type="submit">Añadir Post</button>
+        <button className="btn-cancel" onClick={closeEditor}>Cancelar</button>
       </form>
     </div>
   );

@@ -3,10 +3,7 @@
 
 .post {
     margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 10px;
-    background: var(--secondary-color);
-    box-shadow: var(--box-shadow);
+    @include card();
 
     .titulo .descripcion .code .img {
         margin-bottom: 1rem;
