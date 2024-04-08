@@ -7,7 +7,7 @@ import "./Articulos.scss";
 function Articulos() {
   const [posts, setPosts] = useState([]);
   const [postEditorOpen, setPostEditorOpen] = useState(false);
-  const [setEditPostData] = useState(null);
+  const [edtPostData, setEditPostData] = useState(null);
  
 
   useEffect(() => {
