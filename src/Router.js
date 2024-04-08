@@ -4,6 +4,7 @@ import Navbar from "./components/misc/Navbar";
 import Home from "./components/home/Home";
 import Articulos from "./components/posts/Articulos";
 import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
 
 function Router() {
   return (
@@ -12,7 +13,7 @@ function Router() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/articulos" element={<Articulos />} />
-        <Route path="/login">Login</Route>
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>

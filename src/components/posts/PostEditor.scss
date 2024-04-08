@@ -4,29 +4,6 @@
 .post-editor {
     @include card();
 
-    label, input, textarea, img {
-        display: block;
-    }
-
-    label {
-        margin-bottom: 0.5rem;
-        font-size: 1.3rem;
-        font-weight: bold;
-    }
-
-    textarea {
-        height: 200px;
-        overflow: auto;
-    }
-    
-    input, textarea, img {
-        margin-bottom: 1rem;
-        padding: 0.3rem;
-        border-radius: 5px;
-        width: 100%;
-        background: var(--accent-color);
-    }
-
     .btn-save, .btn-cancel {
         @include btn();
         margin-right: 1rem;

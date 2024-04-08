@@ -66,7 +66,7 @@ function PostEditor({ getPosts, setPostEditorOpen, editPostData }) {
 
   return (
     <div className="post-editor">
-      <form onSubmit={savedPost}>
+      <form className="form" onSubmit={savedPost}>
         <label htmlFor="editor-title">Titulo</label>
         <input
           id="editor-title"
