@@ -4,6 +4,7 @@
 .post {
     margin: 1rem 0;
     @include card();
+    display: block;
 
     .titulo .descripcion .code .img {
         margin-bottom: 1rem;
@@ -17,8 +18,8 @@
 
     .img {
         padding: 0.5rem;
-        width: 550px;
         border-radius: 15px;
+        width: 100%
     }
 
     .btn-edit, .btn-delete {
@@ -27,7 +28,7 @@
     }
 
     .btn-edit {
-        background: var(--primary-color);
+        background: var(--accent-color);
         color: var(--text-color);
     }
 

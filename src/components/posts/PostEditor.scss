@@ -4,7 +4,7 @@
 .post-editor {
     @include card();
 
-    label, input, textarea {
+    label, input, textarea, img {
         display: block;
     }
 
@@ -16,20 +16,15 @@
 
     textarea {
         height: 200px;
-        resize: none;
         overflow: auto;
     }
-
-    input, textarea {
+    
+    input, textarea, img {
         margin-bottom: 1rem;
         padding: 0.3rem;
         border-radius: 5px;
         width: 100%;
         background: var(--accent-color);
-    }
-
-    img {
-
     }
 
     .btn-save, .btn-cancel {
